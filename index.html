@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RR-BIG Summer Institute | University of Minnesota</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen">
+  <header class="umn-maroon text-white border-b-4 border-umn-gold sticky top-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+        <div>
+          <p class="text-xs uppercase tracking-[0.25em] text-yellow-200 font-bold">University of Minnesota</p>
+          <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight">RR-BIG Summer Institute</h1>
+          <p class="text-sm text-yellow-100 mt-1">Reproducible Research in Brain Imaging Genomics</p>
+        </div>
+
+        <nav class="flex flex-wrap gap-2 text-sm font-semibold" aria-label="Main navigation">
+          <button data-page="overview" class="nav-btn px-3 py-2 rounded-lg hover:bg-white/10">Overview</button>
+          <button data-page="program" class="nav-btn px-3 py-2 rounded-lg hover:bg-white/10">Program</button>
+          <button data-page="schedule" class="nav-btn px-3 py-2 rounded-lg hover:bg-white/10">Schedule</button>
+          <button data-page="materials" class="nav-btn px-3 py-2 rounded-lg hover:bg-white/10">Materials</button>
+          <button data-page="travel" class="nav-btn px-3 py-2 rounded-lg hover:bg-white/10">Travel</button>
+          <button data-page="people" class="nav-btn px-3 py-2 rounded-lg hover:bg-white/10">People</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-14">
+    <section id="contentShell" class="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
+      <div id="pageContent" class="p-6 md:p-10"></div>
+    </section>
+  </main>
+
+  <footer class="umn-maroon text-white mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col md:flex-row justify-between gap-4">
+      <div>
+        <h2 class="font-extrabold text-lg">RR-BIG Summer Institute</h2>
+        <p class="text-sm text-yellow-100 mt-1">Reproducible Research in Brain Imaging Genomics</p>
+      </div>
+      <p class="text-sm text-yellow-100">University of Minnesota · NIH R25 Training Workshop</p>
+    </div>
+  </footer>
+
+  <script type="module" src="assets/app.js"></script>
+</body>
+</html>

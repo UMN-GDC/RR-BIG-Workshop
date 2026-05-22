@@ -1,6 +1,6 @@
 # RR-BIG Website
 
-This repository is structured so the website design and the editable content are separated.
+Megan:  I have created this branch for you. Go to content directory and add your content.
 
 ## Folder structure
 

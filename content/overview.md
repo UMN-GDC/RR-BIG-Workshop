@@ -1,6 +1,8 @@
 # RR-BIG Summer Institute
 
-**Reproducible Research in Brain Imaging Genomics** is a three-week summer institute focused on neuroimaging foundations, statistical genetics, reproducible workflows, and integrative brain imaging genomics.
+Welcome to the official directory for the Research Education Program: **Reproducible Research in Brain Imaging Genetics (RR-BIG) Summer Institute** at the University of Minnesota (UMN).
+
+This is a three-week summer institute focused on neuroimaging foundations, statistical genetics, reproducible workflows, and integrative brain imaging genomics.
 
 ## Institute at a glance
 

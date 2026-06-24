@@ -203,9 +203,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "09:00",
     endTime: "10:30",
-    title: "Genetic data foundations for brain imaging genetics",
+    title: "Genetic data foundations for brain imaging genetics, genotype data formats, QC concepts, and statistical genetics motivation",
     instructor: "Saonli Basu",
-    notes: "Genotype data formats, QC concepts, and statistical genetics motivation.",
+    notes: "Week 2 lecture block.",
     readings: "https://gdcgenomicsqc.readthedocs.io/"
   },
   {
@@ -225,9 +225,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "13:00",
     endTime: "14:00",
-    title: "Genetic data foundations for brain imaging genetics",
+    title: "Genetic data foundations for brain imaging genetics, genotype data formats, QC concepts, and statistical genetics motivation",
     instructor: "Saonli Basu",
-    notes: "Continuation of core concepts and setup for hands-on workflow work.",
+    notes: "Afternoon continuation.",
     readings: ""
   },
   {
@@ -236,9 +236,9 @@ export const scheduleData = [
     type: "Lab",
     startTime: "14:30",
     endTime: "15:30",
-    title: "Run QC pipeline and review genetic data types",
+    title: "Run QC pipeline + get oriented to genetic data types (.vcf.gz, .bed, .bim, .fam, .ped)",
     instructor: "Saonli Basu and team",
-    notes: "Hands-on work with .vcf.gz, .bed, .bim, .fam, and .ped formats.",
+    notes: "Week 2 lab activity.",
     readings: ""
   },
   {
@@ -249,7 +249,7 @@ export const scheduleData = [
     endTime: "10:30",
     title: "Relatedness, kinship estimation, mixed effect models, and genomic relationship matrices",
     instructor: "Saonli Basu",
-    notes: "Relationship inference, kinship, and GRM interpretation.",
+    notes: "Week 2 lecture block.",
     readings: "https://www.nature.com/articles/ng.608"
   },
   {
@@ -260,7 +260,7 @@ export const scheduleData = [
     endTime: "14:00",
     title: "Relatedness, kinship estimation, mixed effect models, and genomic relationship matrices",
     instructor: "Saonli Basu",
-    notes: "Continuation with mixed-model motivation and practical QC outputs.",
+    notes: "Afternoon continuation.",
     readings: ""
   },
   {
@@ -269,9 +269,9 @@ export const scheduleData = [
     type: "Lab",
     startTime: "14:30",
     endTime: "15:30",
-    title: "Explore relatedness and kinship outputs",
+    title: "Explore relatedness and kinship outputs + identify duplicates, siblings, and cryptic relatives",
     instructor: "Christian Coffman and Kody DeGolier",
-    notes: "Identify duplicates, siblings, and cryptic relatives.",
+    notes: "Week 2 lab activity.",
     readings: ""
   },
   {
@@ -280,9 +280,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "09:00",
     endTime: "10:30",
-    title: "Population stratification, ancestry inference, admixture, and nonlinear methods",
+    title: "Population stratification, ancestry inference, admixture, and linear/nonlinear approaches including PCA, UMAP, and VAE",
     instructor: "Saonli Basu",
-    notes: "PCA, UMAP, VAE, and multi-ethnic structure.",
+    notes: "Week 2 lecture block.",
     readings: "https://doi.org/10.1101/2024.01.11.575231"
   },
   {
@@ -302,9 +302,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "13:00",
     endTime: "14:00",
-    title: "Population stratification, ancestry inference, admixture, and nonlinear methods",
+    title: "Population stratification, ancestry inference, admixture, and linear/nonlinear approaches including PCA, UMAP, and VAE",
     instructor: "Saonli Basu",
-    notes: "Applied comparison of ancestry visualization and classification workflows.",
+    notes: "Afternoon continuation.",
     readings: ""
   },
   {
@@ -313,9 +313,9 @@ export const scheduleData = [
     type: "Lab",
     startTime: "14:30",
     endTime: "15:30",
-    title: "Explore ancestry outputs and compare PCA, UMAP, and VAE",
+    title: "Explore global ancestry outputs + compare PCA, UMAP, and VAE on simulated admixed data",
     instructor: "Christian Coffman and Kody DeGolier",
-    notes: "Use simulated admixed data to compare methods.",
+    notes: "Week 2 lab activity.",
     readings: ""
   },
   {
@@ -324,9 +324,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "09:00",
     endTime: "10:30",
-    title: "Heritability estimation in family-based and SNP-based settings",
+    title: "Heritability estimation in family-based and SNP-based settings, with attention to multi-site and multi-ancestry studies",
     instructor: "Saonli Basu",
-    notes: "Family-based and SNP-based approaches in multi-site and multi-ancestry settings.",
+    notes: "Week 2 lecture block.",
     readings: "https://doi.org/10.1101/2020.08.05.236901"
   },
   {
@@ -335,9 +335,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "13:00",
     endTime: "14:00",
-    title: "Heritability estimation in family-based and SNP-based settings",
+    title: "Heritability estimation in family-based and SNP-based settings, with attention to multi-site and multi-ancestry studies",
     instructor: "Saonli Basu",
-    notes: "Interpretation of estimators and modeling assumptions.",
+    notes: "Afternoon continuation.",
     readings: ""
   },
   {
@@ -346,9 +346,9 @@ export const scheduleData = [
     type: "Lab",
     startTime: "14:30",
     endTime: "15:30",
-    title: "Run SNP heritability analyses and compare estimates",
+    title: "Run SNP heritability analyses + compare estimates across ancestries, sites, and estimators",
     instructor: "Christian Coffman and Kody DeGolier",
-    notes: "Compare estimates across ancestries, sites, and estimators.",
+    notes: "Week 2 lab activity.",
     readings: ""
   },
   {
@@ -357,9 +357,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "09:00",
     endTime: "10:30",
-    title: "Polygenic risk score analysis, evaluation, portability, and machine learning approaches",
+    title: "Polygenic risk score analysis, evaluation, portability, and statistical/machine learning approaches in diverse samples",
     instructor: "Saonli Basu",
-    notes: "Single- and multi-ancestry PRS with emphasis on validation and portability.",
+    notes: "Week 2 lecture block.",
     readings: "https://doi.org/10.1038/s41596-020-0353-1"
   },
   {
@@ -379,9 +379,9 @@ export const scheduleData = [
     type: "Lecture",
     startTime: "13:00",
     endTime: "14:00",
-    title: "Polygenic risk score analysis, evaluation, portability, and machine learning approaches",
+    title: "Polygenic risk score analysis, evaluation, portability, and statistical/machine learning approaches in diverse samples",
     instructor: "Saonli Basu",
-    notes: "Comparison of workflow options and output interpretation.",
+    notes: "Afternoon continuation.",
     readings: ""
   },
   {
@@ -390,9 +390,9 @@ export const scheduleData = [
     type: "Lab",
     startTime: "14:30",
     endTime: "15:30",
-    title: "Run PRS workflow and explore outputs",
+    title: "Run PRS workflow + explore outputs, evaluation metrics, and portability across samples",
     instructor: "Christian Coffman and Kody DeGolier",
-    notes: "Evaluate outputs, metrics, and portability across samples.",
+    notes: "Week 2 lab activity.",
     readings: ""
   },
   {

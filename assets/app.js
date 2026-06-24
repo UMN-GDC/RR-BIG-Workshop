@@ -66,7 +66,8 @@ async function loadPage(page) {
 }
 
 function markdownToHtml(markdown) {
-  const lines = markdown.split(/?
+  const lines = markdown.split(/
+?
 /);
   let html = "";
   let inList = false;
@@ -202,7 +203,7 @@ function renderPeopleSection(title, people) {
             <h3 class="text-xl font-extrabold text-slate-950">${person.name}</h3>
             <p class="mt-1 text-sm font-semibold text-[#7a0019]">${person.title}</p>
             <p class="mt-3 text-sm text-slate-600 leading-relaxed">${person.role}</p>
-            <p class="mt-4 text-sm font-semibold text-slate-700">Contact: <a class="text-[#7a0019] underline" href="mailto:${person.email}">${person.email}</a></p>
+            <p class="mt-4 text-sm font-semibold text-slate-700">Email: <span class="font-normal text-slate-800">${person.email}</span></p>
           </article>
         `).join("")}
       </div>

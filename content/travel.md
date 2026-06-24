@@ -1,48 +1,51 @@
 # Travel and Logistics
 
-This page contains practical information for participants.
+This page provides practical information for RR-BIG Summer Institute participants.
+
+## Institute dates and location
+
+- **Program dates:** July 13-31, 2026
+- **Location:** University of Minnesota, Twin Cities campus
+- **Daily format:** Lectures, labs, seminars, and roundtables
 
 ## Travel to campus
 
-Participants flying to Minneasota will arrive at the Minneapolis-Saint Paul International Airport (MSP) which is 13 miles from campus. There are a variety of transportation options from the airport with the two easiest being: 
+Participants flying to Minnesota will typically arrive at **Minneapolis-Saint Paul International Airport (MSP)**, which is about 13 miles from campus.
 
-1. Light Rail Transit: Take the Blue Line to U.S. Bank Stadium station in downtown Minneapolis. Transfer to the Green Line toward St. Paul. Get off at East Bank station. The entire trip takes about 35 minutes. Trains run about every 10 - 20 minutes.  
-
-2. Taxi and/or App-based Ride Services
+- **Light rail:** Take the Blue Line from MSP to U.S. Bank Stadium Station, then transfer to the Green Line toward St. Paul and exit at **East Bank Station**.
+- **Taxi or rideshare:** App-based rides and taxis are available directly from the airport.
+- **Driving:** Parking and campus arrival instructions can be added here once finalized.
 
 ## Housing
 
-On-campus housing will be provided at Pioneer Hall. 
+On-campus housing will be provided at **Pioneer Hall**.
 
-Address: 615 Fulton Street Southeast, Minneapolis, MN 55455
-
-Check-in: 1:00 pm starting Saturday, July 11, 2026
-
-Check-out: By 12:00 pm (noon) on Sunday, August 12, 2026
-
-Bed linens and towels are provided in each room, however the beds are not made. Linens/towels may be
-exchanged as needed at the Pioneer Hall Information Desk.
+- **Address:** 615 Fulton Street SE, Minneapolis, MN 55455
+- **Check-in:** 1:00 PM beginning Saturday, July 11, 2026
+- **Check-out:** By 12:00 PM on Sunday, August 2, 2026
+- **Room setup:** Bed linens and towels are provided, though beds may not be pre-made.
+- **Linen exchange:** Replacement linens and towels are available through the Pioneer Hall Information Desk.
 
 ## Dining
 
-Select meals will be provided in the Pioneer Hall dining hall as follows: 
+Select meals will be provided in the Pioneer Hall dining hall during the institute.
 
-Monday, 7/13/26 : Breakfast | Other Mondays (7/20/26 & 7/27/26): Breakfast, Dinner
+- **Mondays:** Breakfast; on July 20 and July 27, breakfast and dinner
+- **Tuesdays:** Breakfast, lunch, and dinner
+- **Wednesdays:** Breakfast and dinner
+- **Thursdays:** Breakfast, lunch, and dinner
+- **Fridays:** Breakfast and dinner; on July 31, breakfast only
 
-Tuesdays (7/14/26, 7/21/26 & 7/28/26): Breakfast, Lunch, Dinner
+Additional meals may be provided for selected program events.
 
-Wednesdays (7/15/26, 7/22/26 & 7/29/26): Breakfast, Dinner
+## Nearby food and campus amenities
 
-Thursdays (7/16/26, 7/23/26 & 7/30/26): Breakfast, Lunch, Dinner
-
-Fridays (7/17/26 & 7/24/26): Breakfast, Dinner | Friday, 7/31/26: Breakfast
-
-
-Additional meals will be provided for select program events. 
-
-
-Many dining locations can be found on and nearby campus in the Stadium Village and Dinkytown areas as well as Northeast and Downtown Minneapolis. 
+- Dining options are available in **Stadium Village**, **Dinkytown**, **Northeast Minneapolis**, and **Downtown Minneapolis**.
+- Campus-specific maps, Wi-Fi instructions, and building access notes can be added here if needed.
 
 ## Support
 
-Add contacts for program questions, computing support, accessibility needs, Wi-Fi, and campus safety resources.
+- **Program questions:** Saonli Basu (`saonli@umn.edu`) or Lin Zhang (`zhan4800@umn.edu`)
+- **Workshop and lab support:** Christian Coffman (`coffm049@umn.edu`), Kelly Duffy (`duffy379@umn.edu`), or Kody DeGolier (`baron063@umn.edu`)
+- **Accessibility or accommodation needs:** participants should contact the program team in advance so campus resources can be coordinated appropriately
+- **Urgent logistics questions during the institute:** use the primary workshop contacts distributed to participants before arrival

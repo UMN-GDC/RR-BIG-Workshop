@@ -1,34 +1,37 @@
-# RR-BIG Website
+# RR-BIG Workshop Site
 
-Megan:  I have created this branch for you. Go to content directory and add your content.
+This repository contains the static website for the RR-BIG Summer Institute.
 
-## Folder structure
+## Structure
 
 ```text
-rr-big-website/
-  index.html
-  assets/
-    style.css
-    app.js
-  data/
-    schedule-data.js
-  content/
-    overview.md
-    program.md
-    materials.md
-    travel.md
-    people.md
+RR-BIG-Workshop/
+├── index.html
+├── assets/
+│   ├── app.js
+│   └── style.css
+├── content/
+│   ├── overview.md
+│   ├── program.md
+│   ├── people.md
+│   └── travel.md
+└── data/
+    ├── people-data.js
+    └── schedule-data.js
 ```
 
-## How to edit content
-
-Most page text lives in the Markdown files inside the `content/` folder.
-
-For example:
+## Main content files
 
 - Edit `content/overview.md` to update the Overview page.
 - Edit `content/program.md` to update the Program page.
+- Edit `content/people.md` to update the People page.
 - Edit `content/travel.md` to update the Travel page.
+
+The `People` page uses structured data from:
+
+```text
+data/people-data.js
+```
 
 ## How to edit the schedule
 
@@ -38,45 +41,32 @@ The schedule lives in:
 data/schedule-data.js
 ```
 
-Add or revise entries there. Each schedule item has this structure:
+Add or revise entries there. Each schedule item includes:
 
-```js
-{
-  week: "2",
-  day: "Monday",
-  type: "Lecture",
-  startTime: "09:00",
-  endTime: "10:00",
-  title: "Lecture title",
-  instructor: "Instructor name",
-  notes: "Optional notes",
-  readings: "Optional URL"
-}
-```
+- `week`
+- `day`
+- `type`
+- `startTime`
+- `endTime`
+- `title`
+- `instructor`
+- `notes`
+- `readings`
 
-## How the website updates
+## Navigation
 
-The `index.html` file does not need to be manually edited when Markdown or schedule content changes.
+The navigation tabs are defined in `index.html`, and the allowed page names are defined in `assets/app.js`.
 
-When a visitor opens the site, `assets/app.js` loads:
+The current public navigation is:
 
-- the selected Markdown file from `content/`
-- the schedule data from `data/schedule-data.js`
+- `Overview`
+- `Program`
+- `Schedule`
+- `Travel`
+- `People`
+
+## Publishing notes
+
+The `index.html` file does not need to be manually edited when Markdown or schedule content changes, unless you are changing navigation labels or the overall page shell.
 
 On GitHub Pages, once you commit changes to a Markdown file or `schedule-data.js`, the website will show the updated content after GitHub Pages refreshes.
-
-## Local preview
-
-Because this site loads Markdown files using `fetch()`, do not preview it by double-clicking `index.html`.
-
-Instead, run a small local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```

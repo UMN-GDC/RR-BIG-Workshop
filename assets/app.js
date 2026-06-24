@@ -1,6 +1,7 @@
 import { scheduleData } from "../data/schedule-data.js";
+import { peopleData } from "../data/people-data.js";
 
-const pages = ["overview", "program", "schedule", "materials", "travel", "people"];
+const pages = ["overview", "program", "schedule", "travel", "people"];
 const pageContent = document.getElementById("pageContent");
 
 document.querySelectorAll(".nav-btn").forEach((button) => {
@@ -42,6 +43,11 @@ async function loadPage(page) {
     return;
   }
 
+  if (page === "people") {
+    renderPeoplePage();
+    return;
+  }
+
   try {
     const response = await fetch(`content/${page}.md`);
     if (!response.ok) {
@@ -60,7 +66,8 @@ async function loadPage(page) {
 }
 
 function markdownToHtml(markdown) {
-  const lines = markdown.split(/\r?\n/);
+  const lines = markdown.split(/?
+/);
   let html = "";
   let inList = false;
 
@@ -158,6 +165,51 @@ function renderSchedulePage() {
   renderSchedule(activeWeek);
 }
 
+function renderPeoplePage() {
+  pageContent.innerHTML = `
+    <div>
+      <p class="text-xs uppercase tracking-[0.2em] font-extrabold text-[#7a0019]">People</p>
+      <h1 class="text-4xl font-extrabold text-slate-950 mt-1">Faculty, mentors, and speakers</h1>
+      <p class="text-slate-600 mt-3 max-w-3xl">
+        RR-BIG brings together faculty, research professionals, and invited speakers across neuroimaging,
+        biostatistics, statistical genetics, and reproducible data science.
+      </p>
+
+      <div class="mt-8">
+        ${renderPeopleSection("Program leadership", peopleData.leadership)}
+        ${renderPeopleSection("Lab mentors and teaching support", peopleData.mentors)}
+
+        <section class="mt-10">
+          <h2 class="text-2xl font-extrabold text-slate-950">Guest speakers and roundtable contributors</h2>
+          <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-6">
+            <ul class="space-y-3 text-slate-700">
+              ${peopleData.speakers.map((speaker) => `<li class="leading-relaxed">${speaker}</li>`).join("")}
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  `;
+}
+
+function renderPeopleSection(title, people) {
+  return `
+    <section class="mt-10">
+      <h2 class="text-2xl font-extrabold text-slate-950">${title}</h2>
+      <div class="mt-4 grid gap-4 md:grid-cols-2">
+        ${people.map((person) => `
+          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="text-xl font-extrabold text-slate-950">${person.name}</h3>
+            <p class="mt-1 text-sm font-semibold text-[#7a0019]">${person.title}</p>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">${person.role}</p>
+            <p class="mt-4 text-sm font-semibold text-slate-700">Contact: <a class="text-[#7a0019] underline" href="mailto:${person.email}">${person.email}</a></p>
+          </article>
+        `).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderSchedule(activeWeek) {
   const container = document.getElementById("scheduleTimeline");
   const selectedType = document.getElementById("typeFilter").value;
@@ -232,10 +284,6 @@ function renderSchedule(activeWeek) {
 
             <h3 class="text-lg font-extrabold text-slate-950 leading-snug">${item.title}</h3>
             ${item.notes ? `<p class="mt-2 text-sm text-slate-600 leading-relaxed">${item.notes}</p>` : ""}
-
-            <div class="mt-4 flex flex-wrap gap-2">
-              ${item.readings ? `<a href="${item.readings}" target="_blank" rel="noopener" class="inline-flex items-center rounded-xl bg-[#7a0019] text-white px-3 py-2 text-xs font-extrabold hover:brightness-110">View materials →</a>` : `<span class="inline-flex items-center rounded-xl bg-slate-100 text-slate-500 px-3 py-2 text-xs font-bold">Materials coming soon</span>`}
-            </div>
           </div>
         </div>
       </article>

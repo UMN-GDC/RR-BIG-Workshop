@@ -15,12 +15,6 @@ This three-week summer institute moves from neuroimaging foundations to statisti
 
 RR-BIG is designed for graduate students, postdoctoral trainees, research staff, and early-career investigators with interests in neuroimaging, statistical genetics, bioinformatics, biostatistics, neuroscience, or related quantitative health sciences.
 
-## Week structure
-
-- **Week 1:** Brain anatomy, neuroimaging terminology, preprocessing, phenotype extraction, and imaging QC
-- **Week 2:** Genetic data foundations, relatedness, ancestry and admixture, heritability, and polygenic risk scores
-- **Week 3:** Study design, ABCD-style integrative analysis, visualization, and reproducible reporting
-
 ## Training goals
 
 - Build foundational knowledge in neuroimaging and statistical genetics.

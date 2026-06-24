@@ -1,7 +1,6 @@
-import { scheduleData } from "../data/schedule-data.js";
 import { peopleData } from "../data/people-data.js";
 
-const pages = ["overview", "program", "schedule", "travel", "people"];
+const pages = ["overview", "program", "travel", "people"];
 const pageContent = document.getElementById("pageContent");
 
 document.querySelectorAll(".nav-btn").forEach((button) => {
@@ -38,10 +37,6 @@ async function loadPage(page) {
   setActiveNav(page);
   window.scrollTo({ top: 0, behavior: "smooth" });
 
-  if (page === "schedule") {
-    renderSchedulePage();
-    return;
-  }
 
   if (page === "people") {
     renderPeoplePage();
@@ -66,9 +61,7 @@ async function loadPage(page) {
 }
 
 function markdownToHtml(markdown) {
-  const lines = markdown.split(/
-?
-/);
+  const lines = markdown.split(/\r?\n/);
   let html = "";
   let inList = false;
 
@@ -177,37 +170,48 @@ function renderPeoplePage() {
       </p>
 
       <div class="mt-8">
-        ${renderPeopleSection("Program leadership", peopleData.leadership)}
-        ${renderPeopleSection("Lab mentors and teaching support", peopleData.mentors)}
-
-        <section class="mt-10">
-          <h2 class="text-2xl font-extrabold text-slate-950">Guest speakers and roundtable contributors</h2>
-          <div class="mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-6">
-            <ul class="space-y-3 text-slate-700">
-              ${peopleData.speakers.map((speaker) => `<li class="leading-relaxed">${speaker}</li>`).join("")}
-            </ul>
-          </div>
-        </section>
+        ${renderPeopleSection("Program leadership", peopleData.leadership, true)}
+        ${renderPeopleSection("Lab mentors and teaching support", peopleData.mentors, false)}
+        ${renderSpeakersSection()}
       </div>
     </div>
   `;
 }
 
-function renderPeopleSection(title, people) {
+function renderPeopleSection(title, people, openByDefault = false) {
   return `
-    <section class="mt-10">
-      <h2 class="text-2xl font-extrabold text-slate-950">${title}</h2>
-      <div class="mt-4 grid gap-4 md:grid-cols-2">
+    <details class="mt-6 rounded-2xl border border-slate-200 bg-white shadow-sm" ${openByDefault ? "open" : ""}>
+      <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
+        <span class="text-xl font-extrabold text-slate-950">${title}</span>
+        <span class="text-sm font-semibold text-slate-500">${people.length} people</span>
+      </summary>
+      <div class="px-5 pb-5 grid gap-4 md:grid-cols-2">
         ${people.map((person) => `
-          <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <h3 class="text-xl font-extrabold text-slate-950">${person.name}</h3>
+          <article class="rounded-2xl border border-slate-200 bg-slate-50 p-4">
+            <h3 class="text-lg font-extrabold text-slate-950">${person.name}</h3>
             <p class="mt-1 text-sm font-semibold text-[#7a0019]">${person.title}</p>
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed">${person.role}</p>
-            <p class="mt-4 text-sm font-semibold text-slate-700">Email: <span class="font-normal text-slate-800">${person.email}</span></p>
+            <p class="mt-2 text-sm text-slate-600 leading-relaxed">${person.role}</p>
+            <p class="mt-3 text-sm font-semibold text-slate-700">Email: <span class="font-normal text-slate-800">${person.email}</span></p>
           </article>
         `).join("")}
       </div>
-    </section>
+    </details>
+  `;
+}
+
+function renderSpeakersSection() {
+  return `
+    <details class="mt-6 rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
+        <span class="text-xl font-extrabold text-slate-950">Guest speakers and roundtable contributors</span>
+        <span class="text-sm font-semibold text-slate-500">${peopleData.speakers.length} people</span>
+      </summary>
+      <div class="px-5 pb-5">
+        <ul class="space-y-3 text-slate-700">
+          ${peopleData.speakers.map((speaker) => `<li class="leading-relaxed">${speaker}</li>`).join("")}
+        </ul>
+      </div>
+    </details>
   `;
 }
 
@@ -268,10 +272,9 @@ function renderSchedule(activeWeek) {
       <article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition">
         <div class="flex flex-col md:flex-row md:items-start gap-4">
           <div class="md:w-40 shrink-0">
-            <div class="inline-flex items-center gap-2 rounded-xl bg-slate-900 text-white px-3 py-2 text-sm font-extrabold">
-              ${formatTime(item.startTime)}
+            <div class="inline-flex items-center rounded-xl bg-slate-100 text-slate-950 px-3 py-2 text-sm font-extrabold border border-slate-300">
+              ${formatTime(item.startTime)} - ${formatTime(item.endTime)}
             </div>
-            <p class="text-xs text-slate-500 font-semibold mt-2">to ${formatTime(item.endTime)}</p>
           </div>
 
           <div class="flex-1 min-w-0">

@@ -1,6 +1,6 @@
 import { peopleData } from "../data/people-data.js";
 
-const pages = ["overview", "program", "travel", "people"];
+const pages = ["overview", "program", "materials", "travel", "people"];
 const pageContent = document.getElementById("pageContent");
 
 document.querySelectorAll(".nav-btn").forEach((button) => {
@@ -44,6 +44,11 @@ async function loadPage(page) {
 
   if (page === "program") {
     renderProgramPage();
+    return;
+  }
+
+  if (page === "materials") {
+    pageContent.innerHTML = renderMaterialsPage();
     return;
   }
 
@@ -254,6 +259,264 @@ function renderProgramWeek(title, items, openByDefault = false) {
         </ul>
       </div>
     </details>
+  `;
+}
+
+function renderDetailSections(sections) {
+  return sections.map((section) => `
+    <details class="mt-6 rounded-2xl border border-slate-200 bg-white shadow-sm" ${section.open ? "open" : ""}>
+      <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
+        <span class="text-xl font-extrabold text-slate-950">${section.title}</span>
+      </summary>
+      <div class="px-5 pb-5">
+        ${section.content}
+      </div>
+    </details>
+  `).join("");
+}
+
+function renderMaterialLinks(materials = {}) {
+  const order = [
+    ["slides", "Slides"],
+    ["notes", "Notes"]
+  ];
+
+  return `
+    <div class="mt-3 flex flex-wrap gap-2">
+      ${order.map(([key, label]) => {
+        const href = materials[key];
+        if (href) {
+          return `<a href="${href}" target="_blank" rel="noopener" class="inline-flex items-center rounded-full border border-[#7a0019]/20 bg-[#7a0019]/5 px-3 py-1 text-xs font-semibold text-[#7a0019] hover:bg-[#7a0019]/10">${label}</a>`;
+        }
+        return `<span class="inline-flex items-center rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-500">${label}: add link</span>`;
+      }).join("")}
+    </div>
+  `;
+}
+
+function renderMaterialSession(session) {
+  return `
+    <div class="rounded-2xl border border-slate-200 bg-white px-4 py-4 shadow-sm">
+      <div class="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+        <div>
+          <p class="text-sm font-bold text-slate-900">${session.label}</p>
+          <p class="text-sm text-slate-500">${session.time}</p>
+        </div>
+        <p class="text-sm font-medium text-slate-600">${session.instructor || ""}</p>
+      </div>
+      <p class="mt-2 text-sm leading-relaxed text-slate-700">${session.title}</p>
+      ${session.notes ? `<p class="mt-2 text-sm text-slate-500">${session.notes}</p>` : ""}
+      ${renderMaterialLinks(session.materials || {})}
+    </div>
+  `;
+}
+
+function renderMaterialDay(day, openByDefault = false) {
+  return `
+    <details class="rounded-3xl border border-slate-200 bg-slate-50/70 shadow-sm" ${openByDefault ? "open" : ""}>
+      <summary class="cursor-pointer list-none px-4 py-4 md:px-5 flex items-start justify-between gap-4">
+        <div>
+          <h3 class="text-xl font-extrabold text-slate-950">${day.day}</h3>
+          <p class="mt-1 text-sm text-slate-600">${day.focus}</p>
+        </div>
+        <span class="shrink-0 rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-500 border border-slate-200">${day.sessions.length} items</span>
+      </summary>
+      <div class="px-4 pb-4 md:px-5 md:pb-5">
+        <div class="grid gap-3">
+          ${day.sessions.map((session) => renderMaterialSession(session)).join("")}
+        </div>
+      </div>
+    </details>
+  `;
+}
+
+function renderMaterialsWeek(week) {
+  return {
+    title: week.title,
+    open: week.open,
+    content: `<div class="grid gap-4">${week.days.map((day) => renderMaterialDay(day, false)).join("")}</div>`
+  };
+}
+
+function renderMaterialsPage() {
+  const weeks = [
+    {
+      title: "Week 1: Basics of Brain Anatomy and Neuroimaging Data",
+      open: false,
+      days: [
+        {
+          day: "Day 1",
+          focus: "Scientific questions in brain genomics and neuroimaging as intermediate phenotypes.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Eric Feczko", title: "Introduce scientific questions in brain genomics and use of neuroimaging as intermediate phenotypes.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Roundtable Group", title: "Big Data vs. Deep Phenotyping: perspectives toward 21st century neuroimaging research.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Eric Feczko", title: "Continuation of the motivating scientific questions lecture with imaging genomics examples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Michael Anderson", title: "Accessing NDA/LASSO and the ABCD database.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 2",
+          focus: "Brain structure, parcellation, and key neuroanatomical concepts.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Eric Feczko", title: "Overview of brain structure and parcellation.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Eric Feczko", title: "Continuation of brain structure and parcellation with examples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Michael Anderson", title: "Viewing neuroimaging data.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 3",
+          focus: "Neuroimaging terminology, voxel/ROI concepts, and imaging modalities.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Eric Feczko", title: "Introduce neuroimaging terminology and modalities.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 1 faculty", title: "Progress toward brain imaging data standardization and harmonization.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Eric Feczko", title: "Continuation with structural and functional imaging workflow examples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Michael Anderson", title: "Data standards, processing, and curation workflows.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 4",
+          focus: "Extraction of meaningful imaging phenotypes.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Eric Feczko", title: "Extraction of meaningful phenotypes.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Eric Feczko", title: "Continuation with morphometry and phenotype definition choices.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Michael Anderson", title: "Morphometry data extraction and QC.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 5",
+          focus: "Precision functional mapping, pitfalls, and reproducibility discussion.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Eric Feczko", title: "Precision functional mapping.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 1 faculty", title: "Pitfalls and considerations for MRI phenotypes.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Eric Feczko", title: "Continuation of precision functional mapping with translational examples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Michael Anderson", title: "Precision functional mapping workflow review.", materials: {} }
+          ]
+        }
+      ]
+    },
+    {
+      title: "Week 2: Genomics Data and Methods for Heritability and Polygenic Risk Score Analysis",
+      open: true,
+      days: [
+        {
+          day: "Day 1",
+          focus: "Genetic data foundations, genotype formats, QC concepts, and statistical genetics motivation.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Saonli Basu", title: "Genetic data foundations for brain imaging genetics, genotype data formats, QC concepts, and statistical genetics motivation.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 2 faculty", title: "Genetic data quality control and reproducible workflows in imaging genetics.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Saonli Basu", title: "Afternoon continuation of genetic data foundations and QC concepts.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Christian Coffman", title: "Run QC pipeline and get oriented to genetic data types (.vcf.gz, .bed, .bim, .fam, .ped).", materials: {} }
+          ]
+        },
+        {
+          day: "Day 2",
+          focus: "Relatedness, kinship estimation, mixed effect models, and genomic relationship matrices.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Saonli Basu", title: "Relatedness, kinship estimation, mixed effect models, and genomic relationship matrices.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Saonli Basu", title: "Afternoon continuation with estimation strategy and interpretation examples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Christian Coffman", title: "Explore relatedness and kinship outputs and identify duplicates, siblings, and cryptic relatives.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 3",
+          focus: "Population stratification, ancestry inference, admixture, and linear/nonlinear embedding approaches.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Saonli Basu", title: "Population stratification, ancestry inference, admixture, and linear/nonlinear approaches including PCA, UMAP, and VAE.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 2 faculty", title: "Ancestry, admixture, and fairness in multi-ethnic brain imaging genomics studies.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Saonli Basu", title: "Afternoon continuation with classification, RF-based assignment, and interpretation of admixed samples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Christian Coffman", title: "Explore global ancestry outputs and compare PCA, UMAP, and VAE on simulated admixed data.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 4",
+          focus: "Family-based and SNP-based heritability estimation in multi-site and multi-ancestry studies.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Saonli Basu", title: "Heritability estimation in family-based and SNP-based settings, with attention to multi-site and multi-ancestry studies.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Saonli Basu", title: "Afternoon continuation on modeling assumptions, estimators, and interpretation.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Christian Coffman", title: "Run SNP heritability analyses and compare estimates across ancestries, sites, and estimators.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 5",
+          focus: "Polygenic risk score analysis, evaluation, portability, and diverse-sample prediction.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Saonli Basu", title: "Polygenic risk score analysis, evaluation, portability, and statistical/machine learning approaches in diverse samples.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 2 faculty", title: "Interpretation, limitations, and responsible use of heritability and polygenic risk scores.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Saonli Basu", title: "Afternoon continuation with PRS workflow decisions and performance interpretation.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Kody DeGolier", title: "Run PRS workflow and explore outputs, evaluation metrics, and portability across samples.", materials: {} }
+          ]
+        }
+      ]
+    },
+    {
+      title: "Week 3: Study Design and Integrative Analysis of Brain Imaging Genomics",
+      open: false,
+      days: [
+        {
+          day: "Day 1",
+          focus: "Study design and the role of imaging genetics in translational research.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Week 3 faculty", title: "Study design for brain imaging genomics and reproducible integrative analysis.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 3 faculty", title: "Advanced discussion in integrative imaging genomics.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Week 3 faculty", title: "Continuation with design considerations and translational examples.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Kelly Duffy", title: "Hands-on integrative analysis workflow.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 2",
+          focus: "Association analysis, modeling choices, and reproducible interpretation.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Week 3 faculty", title: "Association modeling and interpretation for imaging genomics studies.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Week 3 faculty", title: "Continuation with model diagnostics and sensitivity analyses.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Kelly Duffy", title: "Applied association analysis and reproducible reporting.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 3",
+          focus: "Integrative pipelines and harmonized multi-modal workflows.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Week 3 faculty", title: "Integrative pipelines for brain imaging genomics.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 3 faculty", title: "Discussion of challenges in large collaborative neuroimaging genomics studies.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Week 3 faculty", title: "Continuation with harmonization, reproducibility, and workflow design.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Kelly Duffy", title: "Hands-on reproducible multi-modal analysis activity.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 4",
+          focus: "Capstone-style synthesis and collaborative analysis practice.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Week 3 faculty and mentors", title: "Capstone analysis planning and synthesis of institute methods.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Week 3 faculty and mentors", title: "Continuation with collaborative interpretation and presentation planning.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Kelly Duffy", title: "Capstone work session and mentor feedback.", materials: {} }
+          ]
+        },
+        {
+          day: "Day 5",
+          focus: "Project presentation, reflection, and next steps.",
+          sessions: [
+            { label: "Lecture", time: "9:00-10:30 AM", instructor: "Week 3 faculty", title: "Project synthesis, interpretation, and responsible reporting.", materials: {} },
+            { label: "Seminar/Roundtable", time: "11:30 AM-12:30 PM", instructor: "Week 3 faculty", title: "Final discussion on reproducibility, collaboration, and future directions.", materials: {} },
+            { label: "Lecture", time: "1:00-2:00 PM", instructor: "Week 3 faculty", title: "Wrap-up session and institute takeaways.", materials: {} },
+            { label: "Lab", time: "2:30-3:30 PM", instructor: "Kelly Duffy", title: "Capstone wrap-up and materials review.", materials: {} }
+          ]
+        }
+      ]
+    }
+  ];
+
+  const sections = weeks.map((week) => renderMaterialsWeek(week));
+
+  return `
+    <section class="content-page page-materials">
+      <div class="hero-card materials-hero">
+        <h1>Course Materials</h1>
+        <p>Browse each week by day, then attach session-specific slides and notes for lectures, seminars, and hands-on activities.</p>
+      </div>
+      <div class="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
+        To post materials, replace any <strong>add link</strong> placeholder with a Box, Google Drive, or local course file URL in the site data.
+      </div>
+      ${renderDetailSections(sections)}
+    </section>
   `;
 }
 

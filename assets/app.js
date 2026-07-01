@@ -211,7 +211,7 @@ function renderProgramPage() {
          <a href="materials/RRBIG Syllabus 2026.pdf" 
              target="_blank" 
              style="display: inline-block; font-weight: 700; color: white; background-color: maroon; padding: 0.75rem 1rem; border-radius: 6px; text-decoration: none; font-size: 1.1rem;">
-              Download the RR-BIG Workshop Syllabus PDF
+              Download RR-BIG Workshop Syllabus
          </a>
       </p>
       <details class="mt-6 rounded-2xl border border-slate-200 bg-white shadow-sm" open>

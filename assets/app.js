@@ -207,12 +207,13 @@ function renderProgramPage() {
         The RR-BIG Summer Institute is organized as an intensive three-week sequence that combines lectures,
         seminars, and hands-on laboratory work.
       </p>
-       <p>
-       <a href="materials/RR-BIG-Syllabus.pdf" target="_blank">
-        Download the RR-BIG Workshop Syllabus
-       </a>
-       </p>
-
+      <p style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
+         <a href="materials/RR-BIG-Syllabus.pdf" 
+             target="_blank" 
+             style="display: inline-block; font-weight: 700; color: white; background-color: maroon; padding: 0.75rem 1rem; border-radius: 6px; text-decoration: none; font-size: 1.1rem;">
+              Download the RR-BIG Workshop Syllabus PDF
+         </a>
+      </p>
       <details class="mt-6 rounded-2xl border border-slate-200 bg-white shadow-sm" open>
         <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
           <span class="text-xl font-extrabold text-slate-950">Program overview</span>

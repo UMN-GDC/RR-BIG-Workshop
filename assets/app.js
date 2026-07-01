@@ -208,7 +208,7 @@ function renderProgramPage() {
         seminars, and hands-on laboratory work.
       </p>
       <p style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-         <a href="materials/RR-BIG-Syllabus.pdf" 
+         <a href="materials/RRBIG Syllabus 2026.pdf" 
              target="_blank" 
              style="display: inline-block; font-weight: 700; color: white; background-color: maroon; padding: 0.75rem 1rem; border-radius: 6px; text-decoration: none; font-size: 1.1rem;">
               Download the RR-BIG Workshop Syllabus PDF

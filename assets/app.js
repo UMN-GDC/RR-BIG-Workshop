@@ -230,7 +230,7 @@ function renderProgramPage() {
       ${renderProgramWeek("Week 1: Neuroimaging Foundations", [
         "<strong>Focus:</strong> Understanding brain structures, transforming raw structural and functional MRI data into standard, quality-controlled, and topologically accurate phenotypes.",
         "<strong>Leader Instructor and Lab Mentor:</strong> <strong>Dr. Eric Feczko</strong>",
-        "<strong>Seminar Speakers:</strong> <strong>Drs. Sylia Wilson, Tervo-Clemmens, and Steve Nelson</strong>",
+        "<strong>Seminar Speakers:</strong> <strong>Drs. Jean-Baptiste (JB) Poline, Oscar Miranda-Dominguez, Brenden Tervo-Clemmens, and Steve Nelson</strong>",
         "<strong>Topics:</strong> brain anatomy, MRI terminology, BIDS, preprocessing, phenotype extraction, quality control, and precision functional mapping."
       ], true)}
 

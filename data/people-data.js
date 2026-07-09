@@ -46,7 +46,8 @@ export const peopleData = {
     }
   ],
   speakers: [
-    "Sylia Wilson, PhD — Associate Professor, Institute of Child Development, University of Minnesota.",
+    "Jean-Baptiste Poline, PhD - Professor, Department of Neurology and Neurosurgery, McGill University.",
+    "Oscar Miranda-Dominguez, PhD — Assistant Professor, Department of Pediatrics, University of Minnesota.",
     "Brendan Tervo-Clemmens, PhD, LP — Assistant Professor, Department of Psychiatry and Behavioral Sciences, University of Minnesota.",
     "Steve Nelson, PhD — Associate Professor, Division of Clinical Behavioral Neuroscience, University of Minnesota.",
     "Wei Pan, PhD — Professor, Division of Biostatistics and Health Data Science, University of Minnesota.",

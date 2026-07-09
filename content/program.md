@@ -16,7 +16,7 @@ The RR-BIG Summer Institute is structured as an intensive, sequential three-week
 
 - Leader Instructor and Lab Mentor: **Dr. Eric Feczko**
 
-- Seminar Speakers: **Drs. Sylia Wilson, Tervo-Clemmens, and Steve Nelson**
+- Seminar Speakers: **Drs. Jean-Baptiste Poline, Brenden Tervo-Clemmens, Steve Nelson, and Oscar Miranda-Dominguez**
 
 - Topics: brain anatomy, MRI terminology, BIDS, preprocessing, phenotype extraction, quality control, and precision functional mapping.
 

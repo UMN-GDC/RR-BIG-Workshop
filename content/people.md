@@ -15,7 +15,7 @@
 
 ## Guest speakers and roundtable contributors
 
-- **Sylia Wilson, PhD** — Associate Professor, Institute of Child Development, University of Minnesota.
+- **Oscar Miranda-Dominguez, PhD** — Assistant Professor, Department of Pediatrics, University of Minnesota.
 - **Brendan Tervo-Clemmens, PhD, LP** — Assistant Professor, Department of Psychiatry and Behavioral Sciences, University of Minnesota.
 - **Steve Nelson, PhD** — Associate Professor, Division of Clinical Behavioral Neuroscience, University of Minnesota.
 - **Wei Pan, PhD** — Professor, Division of Biostatistics and Health Data Science, University of Minnesota.

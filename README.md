@@ -58,23 +58,6 @@ The `People` page uses structured profile data from:
 data/people-data.js
 ```
 
-The schedule data used by the schedule logic and workshop planning lives in:
-
-```text
-data/schedule-data.js
-```
-
-Each schedule item includes:
-
-- `week`
-- `day`
-- `type`
-- `startTime`
-- `endTime`
-- `title`
-- `instructor`
-- `notes`
-- `readings`
 
 ### Markdown content folder
 

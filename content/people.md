@@ -15,6 +15,7 @@
 
 ## Guest speakers and roundtable contributors
 
+- **Jean-Baptiste Poline, PhD** - Professor, Department of Neurology and Neurosurgery, McGill University
 - **Oscar Miranda-Dominguez, PhD** — Assistant Professor, Department of Pediatrics, University of Minnesota.
 - **Brendan Tervo-Clemmens, PhD, LP** — Assistant Professor, Department of Psychiatry and Behavioral Sciences, University of Minnesota.
 - **Steve Nelson, PhD** — Associate Professor, Division of Clinical Behavioral Neuroscience, University of Minnesota.

@@ -1,6 +1,6 @@
 import { peopleData } from "../data/people-data.js";
 
-const pages = ["overview", "program", "materials", "travel", "people"];
+const pages = ["overview", "program", "materials", "travel", "people", "highlights"];
 const pageContent = document.getElementById("pageContent");
 
 document.querySelectorAll(".nav-btn").forEach((button) => {
@@ -59,6 +59,11 @@ async function loadPage(page) {
 
   if (page === "people") {
     renderPeoplePage();
+    return;
+  }
+
+  if (page === "highlights") {
+    renderHighlightsPage();
     return;
   }
 
@@ -797,6 +802,58 @@ function formatTime(timeString) {
   const [hour, minute] = timeString.split(":");
   const H = parseInt(hour, 10);
   return `${H % 12 || 12}:${minute} ${H >= 12 ? "PM" : "AM"}`;
+}
+
+// Add future workshop photos to assets/photos and list their filenames here.
+const workshopPhotos = [
+  { file: "lecture-color-corrected.png", caption: "A workshop lecture on reproducible neuroimaging research tools.", alt: "A presenter speaking beside a slide about neuroimaging research tools at the RR-BIG workshop" },
+  { file: "workshop-group.jpeg", caption: "Participants and faculty together at the 2026 RR-BIG Summer Institute.", alt: "RR-BIG workshop participants and faculty posing together in a classroom" },
+];
+
+function renderHighlightsPage() {
+  const metrics = [
+    ["34 / 35", "rated the overall activities Good or better"],
+    ["34 / 35", "reported gaining new knowledge"],
+    ["33 / 35", "said hands-on sessions improved practical skills"],
+    ["34 / 35", "rated instructor and TA support Good or Excellent"],
+  ];
+
+  pageContent.innerHTML = `
+    <section class="space-y-12">
+      <div class="rounded-3xl bg-[#7a0019] text-white p-7 md:p-12">
+        <p class="text-sm font-bold uppercase tracking-[0.2em] text-yellow-200">July 13–31, 2026 · University of Minnesota</p>
+        <h1 class="mt-3 text-4xl md:text-5xl font-extrabold">Our first summer together</h1>
+        <p class="mt-5 max-w-3xl text-lg text-rose-50">Three weeks of lectures, hands-on labs, discussion, and collaboration in brain imaging genetics. Thank you to the participants, instructors, teaching assistants, and mentors who made the inaugural RR-BIG Summer Institute possible.</p>
+      </div>
+
+      <div>
+        <p class="text-sm font-extrabold uppercase tracking-widest text-[#7a0019]">Participant feedback</p>
+        <h2 class="mt-2 text-3xl font-extrabold text-slate-950">What we heard</h2>
+        <p class="mt-3 max-w-3xl text-slate-600">Across 35 weekly survey submissions, participants reported strong learning gains and valued the connection between lectures and labs, exposure to ABCD data, and support from instructors and TAs.</p>
+        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          ${metrics.map(([value, label]) => `<div class="rounded-2xl border border-slate-200 bg-amber-50 p-5"><p class="text-3xl font-extrabold text-[#7a0019]">${value}</p><p class="mt-2 text-sm font-medium text-slate-700">${label}</p></div>`).join("")}
+        </div>
+        <p class="mt-4 text-xs text-slate-500">Source: 2026 RR-BIG weekly feedback surveys (Week 1: 12; Week 2: 12; Week 3: 11 submissions). The same participant may have responded in multiple weeks; these are responses, not 35 distinct people.</p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h2 class="text-xl font-extrabold text-slate-950">What participants appreciated</h2>
+          <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-700"><li>Accessible instructors and teaching assistants</li><li>Clear links between lectures and hands-on labs</li><li>Experience with ABCD data and reproducible research workflows</li></ul>
+        </div>
+        <div class="rounded-2xl border border-slate-200 p-6">
+          <h2 class="text-xl font-extrabold text-slate-950">What we are improving</h2>
+          <p class="mt-4 text-slate-700">Participants asked to see the complete research workflow and representative ABCD data earlier. We are planning introductory primers, earlier guided real-data labs, and clearer project milestones for future cohorts.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="text-3xl font-extrabold text-slate-950">Workshop moments</h2>
+        <p class="mt-2 text-slate-600">A look back at the people and learning experiences of RR-BIG 2026.</p>
+        ${workshopPhotos.length ? `<div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">${workshopPhotos.map(({ file, caption, alt }) => `<figure class="overflow-hidden rounded-2xl border border-slate-200 bg-white"><img src="assets/photos/${encodeURIComponent(file)}" alt="${alt}" loading="lazy" class="h-64 w-full object-cover"><figcaption class="p-4 text-sm text-slate-700">${caption}</figcaption></figure>`).join("")}</div>` : `<div class="mt-6 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 p-8 text-slate-600">Workshop photo gallery coming soon.</div>`}
+      </div>
+    </section>
+  `;
 }
 
 loadPage(getPageFromHash());

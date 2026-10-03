@@ -149,8 +149,8 @@ function renderCommunity() {
   const photos = [
     ["assets/photos/workshop-group.jpeg", "2026 RR-BIG participants and instructors gathered for a group photo."],
     ["assets/photos/lecture-color-corrected.png", "A workshop lecture in session."],
-    ["assets/photos/IMG_8550.jpg", "RR-BIG learning and discussion session."],
-    ["assets/photos/IMG_8553.jpg", "Participants working together during the workshop."],
+    ["assets/photos/IMG_8550.jpg", "Snapshot during the MIDB trip."],
+    ["assets/photos/IMG_8553.jpg", "Snapshot during the MIDB trip."],
   ];
   return `
     <section class="hero text-white"><div class="section-wrap">

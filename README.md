@@ -1,6 +1,21 @@
 # RR-BIG Workshop Site
 
-This repository contains the static website for the RR-BIG Summer Institute.
+This repository hosts the **RR-BIG Summer Institute 2027** website and a self-contained archive of the 2026 workshop.
+
+## Live site structure
+
+- `/` — the 2027 site, including the institute, program, people, and community pages.
+- `/2026/` — the preserved 2026 website. This path is intentionally self-contained, so it continues to work after the 2027 site is published.
+
+The 2027 institute will take place in person July 12–30, 2027, at the University of Minnesota in Minneapolis. Detailed daily schedule and application instructions will be added as they are confirmed.
+
+## Community page: photos and feedback
+
+The `Community` page is rendered in `assets/app.js`.
+
+- Add a photo to `assets/photos/`, then add its file path and alt text to the `photos` list in `renderCommunity()`.
+- Add an anonymous, edited-for-length feedback quote with the `quote()` calls in `renderCommunity()`.
+- Keep feedback aggregates labeled with their survey week and response count. Do not publish names or identifying details without permission.
 
 ## Structure
 

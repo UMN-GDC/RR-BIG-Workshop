@@ -17,6 +17,12 @@ export const peopleData = {
       title: "Associate Professor, Division of Biostatistics and Health Data Science, University of Minnesota",
       role: "Week 3 lead for integrative ABCD analysis and reproducible research workflows.",
       email: "zhan4800@umn.edu"
+    },
+    {
+      name: "Weihua Guan, PhD",
+      title: "Professor, Division of Biostatistics and Health Data Science, University of Minnesota",
+      role: "Program faculty leader supporting statistical genetics and imaging genomics training.",
+      email: "wguan@umn.edu"
     }
   ],
   mentors: [

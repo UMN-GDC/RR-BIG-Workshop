@@ -1,6 +1,6 @@
 import { peopleData } from "../data/people-data.js";
 
-const pages = ["overview", "program", "materials", "travel", "people", "highlights"];
+const pages = ["overview", "program", "materials", "travel", "people"];
 const pageContent = document.getElementById("pageContent");
 
 document.querySelectorAll(".nav-btn").forEach((button) => {
@@ -59,11 +59,6 @@ async function loadPage(page) {
 
   if (page === "people") {
     renderPeoplePage();
-    return;
-  }
-
-  if (page === "highlights") {
-    renderHighlightsPage();
     return;
   }
 

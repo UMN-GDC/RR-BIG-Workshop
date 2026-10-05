@@ -801,10 +801,10 @@ function formatTime(timeString) {
 
 // Add future workshop photos to assets/photos and list their filenames here.
 const workshopPhotos = [
-  { file: "lecture-color-corrected.png", caption: "A workshop lecture on reproducible neuroimaging research tools.", alt: "A presenter speaking beside a slide about neuroimaging research tools at the RR-BIG workshop" },
-  { file: "workshop-group.jpeg", caption: "Participants and faculty together at the 2026 RR-BIG Summer Institute.", alt: "RR-BIG workshop participants and faculty posing together in a classroom" },
-  { file: "IMG_8550.jpg", caption: "Snapshot during the MIDB trip.", alt: "Snapshot during the MIDB trip at the 2026 RR-BIG workshop" },
-  { file: "IMG_8553.jpg", caption: "Snapshot during the MIDB trip.", alt: "Snapshot during the MIDB trip at the 2026 RR-BIG workshop" },
+  { file: "workshop-lecture.jpg", caption: "A workshop lecture on reproducible neuroimaging research tools.", alt: "A presenter speaking beside a slide about neuroimaging research tools at the RR-BIG workshop" },
+  { file: "group-photo-2026.jpg", caption: "Participants and faculty together at the 2026 RR-BIG Summer Institute.", alt: "RR-BIG workshop participants and faculty posing together in a classroom" },
+  { file: "midb-trip-1.jpg", caption: "Snapshot during the MIDB trip.", alt: "Snapshot during the MIDB trip at the 2026 RR-BIG workshop" },
+  { file: "midb-trip-2.jpg", caption: "Snapshot during the MIDB trip.", alt: "Snapshot during the MIDB trip at the 2026 RR-BIG workshop" },
 ];
 
 function renderHighlightsPage() {

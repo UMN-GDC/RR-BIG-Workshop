@@ -50,6 +50,7 @@ The current public navigation is:
 - `Materials`
 - `Travel`
 - `People`
+- `Community`
 
 ## Where to edit content
 
@@ -62,6 +63,7 @@ These pages are currently built from JavaScript template content inside `assets/
 - `Materials`
 - `Travel`
 - `People`
+- `Community`
 
 If you want to change visible text, section structure, instructor names, or materials links on those pages, edit:
 

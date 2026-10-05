@@ -147,10 +147,10 @@ function renderPeople() {
 
 function renderCommunity() {
   const photos = [
-    ["assets/photos/workshop-group.jpeg", "2026 RR-BIG participants and instructors gathered for a group photo."],
-    ["assets/photos/lecture-color-corrected.png", "A workshop lecture in session."],
-    ["assets/photos/IMG_8550.jpg", "Snapshot during the MIDB trip."],
-    ["assets/photos/IMG_8553.jpg", "Snapshot during the MIDB trip."],
+    ["assets/photos/group-photo-2026.jpg", "2026 RR-BIG participants and instructors."],
+    ["assets/photos/workshop-lecture.jpg", "Professor of Psychiatry and Radiology and UMass Chan Medical School and ReproNim PI Dave Kennedy leading a discussion on reproducible research."],
+    ["assets/photos/midb-trip-1.jpg", "2026 RR-BIG participants touring the Masonic Institute for the Developing Brain."],
+    ["assets/photos/midb-trip-2.jpg", "2026 RR-BIG participants touring the Masonic Institute for the Developing Brain."],
   ];
   return `
     <section class="hero text-white"><div class="section-wrap">
@@ -164,10 +164,22 @@ function renderCommunity() {
     <section class="warm-band"><div class="section-wrap">
       <p class="eyebrow">Participant feedback</p><h2 class="mt-3 text-3xl sm:text-4xl font-extrabold">Participant reflections</h2>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-slate-600">Anonymous feedback from the 2026 institute reflects the practical learning, supportive teaching, and collaborative spirit of RR-BIG.</p>
-      <figure class="mx-auto mt-10 max-w-3xl rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
-        <img src="data/participant-feedback/2026Feedback.png" alt="Overall student feedback rating distribution from 2026 RR-BIG survey" loading="lazy" class="w-full">
-        <figcaption class="mt-3 text-center text-sm text-slate-600">Overall student feedback rating, 2026 RR-BIG Summer Institute survey (Fair to Excellent).</figcaption>
-      </figure>
+      <div class="mt-10 grid items-center gap-8 lg:grid-cols-2">
+        <figure class="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+          <img src="data/participant-feedback/2026Feedback.png" alt="Overall student feedback rating distribution from 2026 RR-BIG survey" loading="lazy" class="w-full">
+          <figcaption class="mt-3 text-center text-sm text-slate-600">Overall student feedback rating, 2026 RR-BIG Summer Institute survey (Fair to Excellent).</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow">At a glance</p>
+          <h3 class="mt-2 text-2xl font-extrabold">What participants said</h3>
+          <ul class="mt-4 list-disc space-y-2 pl-5 text-slate-600">
+            <li>34 of 35 rated the overall activities Good or better.</li>
+            <li>34 of 35 reported gaining new knowledge.</li>
+            <li>33 of 35 said hands-on sessions improved practical skills.</li>
+            <li>34 of 35 rated instructor and TA support Good or Excellent.</li>
+          </ul>
+        </div>
+      </div>
       <div class="mt-10 grid gap-5 lg:grid-cols-2">
         ${quote("“The workshop materials are excellent! They provide comprehensive coverage, from foundational concepts to the latest research in the field.”")}
         ${quote("“The most valuable part ... was learning about genetics and how genetic data can be used in research. The instructor explained many complex concepts clearly and connected the course lectures with the software labs.”")}

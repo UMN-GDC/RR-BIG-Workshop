@@ -148,8 +148,9 @@ function renderPeople() {
 function renderCommunity() {
   const photos = [
     ["assets/photos/workshop-group.jpeg", "2026 RR-BIG participants and instructors gathered for a group photo."],
-    ["assets/photos/lecture-color-corrected.png", "A workshop lecture in session."],
-    ["assets/photos/IMG_8550.jpg", "Snapshot during the MIDB trip."],
+     ["assets/photos/Lecture.jpg", "Week 2 workshop lecture in session."],
+    ["assets/photos/lecture-color-corrected.png", "Week 3 workshop lecture in session."],
+    ["assets/photos/Course-in-session.jpg", "Lab in Progress"],
     ["assets/photos/IMG_8553.jpg", "Snapshot during the MIDB trip."],
   ];
   return `

@@ -147,18 +147,11 @@ function renderPeople() {
 
 function renderCommunity() {
   const photos = [
-<<<<<<< HEAD
     ["assets/photos/workshop-group.jpeg", "2026 RR-BIG participants and instructors gathered for a group photo."],
-     ["assets/photos/Lecture.jpg", "Week 2 workshop lecture in session."],
+    ["assets/photos/Lecture.jpg", "Week 2 workshop lecture in session."],
     ["assets/photos/lecture-color-corrected.png", "Week 3 workshop lecture in session."],
     ["assets/photos/Course-in-session.jpg", "Lab in Progress"],
     ["assets/photos/IMG_8553.jpg", "Snapshot during the MIDB trip."],
-=======
-    ["assets/photos/group-photo-2026.jpg", "2026 RR-BIG participants and instructors."],
-    ["assets/photos/workshop-lecture.jpg", "Professor of Psychiatry and Radiology and UMass Chan Medical School and ReproNim PI Dave Kennedy leading a discussion on reproducible research."],
-    ["assets/photos/midb-trip-1.jpg", "2026 RR-BIG participants touring the Masonic Institute for the Developing Brain."],
-    ["assets/photos/midb-trip-2.jpg", "2026 RR-BIG participants touring the Masonic Institute for the Developing Brain."],
->>>>>>> 9ac1d2d227495549f078ebf2e941a80ef64bacdd
   ];
   return `
     <section class="hero text-white"><div class="section-wrap">

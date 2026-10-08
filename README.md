@@ -23,8 +23,10 @@ The `Community` page is rendered in `assets/app.js`.
 RR-BIG-Workshop/
 ├── index.html
 ├── README.md
+├── 2026/                 # preserved 2026 workshop site
 ├── assets/
 │   ├── app.js
+│   ├── photos/
 │   └── style.css
 ├── content/
 │   ├── materials.md
@@ -32,9 +34,11 @@ RR-BIG-Workshop/
 │   ├── people.md
 │   ├── program.md
 │   └── travel.md
-└── data/
-    ├── people-data.js
-    └── schedule-data.js
+├── data/
+│   ├── participant-feedback/   # derived summaries + original xlsx archived here
+│   ├── people-data.js
+│   └── schedule-data.js
+└── materials/
 ```
 
 ## Current site pages
@@ -46,6 +50,7 @@ The current public navigation is:
 - `Materials`
 - `Travel`
 - `People`
+- `Community`
 
 ## Where to edit content
 
@@ -58,6 +63,7 @@ These pages are currently built from JavaScript template content inside `assets/
 - `Materials`
 - `Travel`
 - `People`
+- `Community`
 
 If you want to change visible text, section structure, instructor names, or materials links on those pages, edit:
 
